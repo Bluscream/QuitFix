@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\ILMerge.3.0.29\build\ILMerge.props" Condition="Exists('packages\ILMerge.3.0.29\build\ILMerge.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9BBAA7F2-6751-4695-9C9B-24456CC4EAB0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QuitFix</RootNamespace>
+    <AssemblyName>QuitFix</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\VRChat\VRChat_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\VRChat\VRChat_Data\Managed\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\VRChat\VRChat_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\VRChat\VRChat_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\VRChat\VRChat_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\VRChat\VRChat_Data\Managed\UnityEngine.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\VRChat\VRChat_Data\Managed\UnityEngine.UIModule.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\VRChat\VRChat_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\VRChat\VRChat_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\VRChat\VRChat_Data\Managed\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="VRCCore-Editor, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\VRChat\VRChat_Data\Managed\VRCCore-Editor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="VRCCore-Standalone, Version=0.0.0.0, Culture=neutral, PublicKeyToken=67033c44591afb45, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\VRChat\VRChat_Data\Managed\VRCCore-Standalone.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="VRCSDK2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=67033c44591afb45, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\VRChat\VRChat_Data\Managed\VRCSDK2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="VRCModLoader">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\VRChat\VRChat_Data\Managed\VRCModLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="VRCTools">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\VRChat\Mods\VRCTools.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="QuitFix.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
