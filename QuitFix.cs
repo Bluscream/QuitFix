@@ -1,6 +1,6 @@
-﻿using VRCModLoader;
 using System.Diagnostics;
 using System.Collections;
+using VRCModLoader;
 
 namespace QuitFix
 {
@@ -15,14 +15,20 @@ namespace QuitFix
 
     public class QuitFix : VRCMod
     {
-        void OnApplicationStart() {}
-        void OnApplicationQuit() { ModManager.StartCoroutine(WaitForQuit()); }
-        void OnLevelWasLoaded(int level) {}
-        void OnLevelWasInitialized(int level) {}
-        void OnUpdate() {}
-        void OnFixedUpdate() {}
-        void OnLateUpdate() {}
-        void OnGUI() {}
+        private const string prefSection = "quitFix";
+        void OnApplicationStart()
+        {
+            VRCTools.ModPrefs.RegisterCategory(prefSection, "Quit Fix");
+            VRCTools.ModPrefs.RegisterPrefBool(prefSection, "enable", true, "Toggle Force Quit");
+            VRCTools.ModPrefs.RegisterPrefBool(prefSection, "waitformods", true, "Let Mods Finish");
+        }
+        void OnApplicationQuit() {
+            if (!VRCTools.ModPrefs.GetBool(prefSection, "enable")) return;
+            if (VRCTools.ModPrefs.GetBool(prefSection, "waitformods"))
+                ModManager.StartCoroutine(WaitForQuit());
+            else
+                Process.GetCurrentProcess().Kill();
+        }
         public static IEnumerator WaitForQuit() { yield return 0; Process.GetCurrentProcess().Kill(); }
     }
 }
